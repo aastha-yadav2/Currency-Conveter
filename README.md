@@ -2,7 +2,9 @@
 
 A sleek and responsive **Currency Converter** web application built using **HTML**, **CSS**, and **JavaScript** that lets users convert between various currencies in real-time using a public exchange rate API.
 
-🌐 **Live Demo**: [View Currency Converter](https://your-live-demo-link.com)
+🌐 **Live Demo**: [View Currency Converter](https://aastha-yadav2.github.io/Currency-Conveter/)
+
+📦 **GitHub Repo**: [aastha-yadav2/Currency-Conveter](https://github.com/aastha-yadav2/Currency-Conveter)
 
 ---
 
@@ -10,9 +12,9 @@ A sleek and responsive **Currency Converter** web application built using **HTML
 
 - 🔄 Real-time currency conversion
 - 🌍 Supports multiple international currencies
-- 💡 User-friendly and clean interface
-- 📱 Mobile responsive design
-- ⚡ Fast and lightweight
+- 💡 Clean, user-friendly interface
+- 📱 Fully mobile-responsive design
+- ⚡ Lightweight and fast
 
 ---
 
@@ -21,24 +23,23 @@ A sleek and responsive **Currency Converter** web application built using **HTML
 - **HTML5**
 - **CSS3**
 - **JavaScript (Vanilla)**
-- **Exchange Rate API** *(e.g., ExchangeRate-API, exchangerate.host)*
+- **Free Exchange Rate API**
 
 ---
 
-## 📸 Screenshots
+## 📸 Screenshot
 
-> 📷 Add your project screenshots below to showcase the UI
+> Add your UI preview here  
+> (Save a screenshot in your repo as `screenshot.png` and uncomment the line below)
 
-![Currency Converter Screenshot](./screenshot.jpg)
+<!-- ![App Screenshot](./screenshot.png) -->
 
 ---
 
 ## 🚀 Getting Started
 
-Follow these steps to run it locally:
-
-### 1. Clone the repository
+### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/Currency-Converter.git
-cd Currency-Converter
+git clone https://github.com/aastha-yadav2/Currency-Conveter.git
+cd Currency-Conveter
