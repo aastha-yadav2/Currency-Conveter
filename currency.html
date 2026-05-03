@@ -1,51 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8"> <!-- ✅ IMPORTANT -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- ✅ responsive -->
+
     <link href="currency.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+
     <title>Currency Converter</title>
 </head>
+
 <body>
     <div class="container">
         <h2>Currency Converter</h2>
+
         <form>
             <div class="amount">
                 <p>Enter Amount</p>
-                <input value="100" type="text">
+
+                <!-- ✅ type="number" better -->
+                <input value="100" type="number">
+
                 <div class="dropdown">
-                    <!-- ✅ FROM -->
+
+                    <!-- FROM -->
                     <div class="from">
                         <p>From</p>
                         <div class="selectcontainer">
                             <img src="https://flagsapi.com/US/flat/64.png">
-                            <select name="from">
-                                <!-- Options will be added by JS -->
-                            </select>
+                            <select name="from"></select>
                         </div>
                     </div>
 
-                    <i class="fa fa-exchange" aria-hidden="true"></i>
+                    <i class="fa fa-exchange"></i>
 
-                    <!-- ✅ TO -->
+                    <!-- TO -->
                     <div class="to">
                         <p>To</p>
                         <div class="selectcontainer">
                             <img src="https://flagsapi.com/IN/flat/64.png">
-                            <select name="to">
-                                <!-- Options will be added by JS -->
-                            </select>
+                            <select name="to"></select>
                         </div>
                     </div>
+
                 </div>
 
                 <div class="msg">1 USD = 80 INR</div>
-                <button>Get Exchange Rates</button>
+
+                <!-- ✅ Explicit type -->
+                <button type="submit">Get Exchange Rates</button>
             </div>
         </form>
     </div>
 
-    <!-- ✅ JS files in the right order -->
+    <!-- ✅ IMPORTANT: countryList पहले load होना चाहिए -->
     <script src="code.js"></script>
+
+    <!-- ✅ Main JS -->
     <script src="currency.js"></script>
 </body>
 </html>
