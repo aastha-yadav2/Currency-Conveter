@@ -1,3 +1,18 @@
+const countryList = {
+  USD: "US",
+  INR: "IN",
+  EUR: "EU",
+  GBP: "GB",
+  AUD: "AU",
+  CAD: "CA",
+  JPY: "JP",
+  CNY: "CN"
+};
+
+
+
+
+
 const BASE_URL =
   "https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies";
 
