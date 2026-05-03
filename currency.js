@@ -10,17 +10,17 @@ const msg = document.querySelector(".msg");
 // Populate dropdowns
 for (let select of dropdowns) {
   for (let currCode in countryList) {
-    let newOption = document.createElement("option");
-    newOption.innerText = currCode;
-    newOption.value = currCode;
+    let option = document.createElement("option");
+    option.innerText = currCode;
+    option.value = currCode;
 
     if (select.name === "from" && currCode === "USD") {
-      newOption.selected = true;
+      option.selected = true;
     } else if (select.name === "to" && currCode === "INR") {
-      newOption.selected = true;
+      option.selected = true;
     }
 
-    select.appendChild(newOption);
+    select.appendChild(option);
   }
 
   select.addEventListener("change", (evt) => {
@@ -28,7 +28,7 @@ for (let select of dropdowns) {
   });
 }
 
-// ✅ FIXED FUNCTION
+// Fetch exchange rate
 const updateExchangeRate = async () => {
   let amount = document.querySelector(".amount input");
   let amtVal = amount.value;
@@ -47,12 +47,11 @@ const updateExchangeRate = async () => {
     let response = await fetch(URL);
 
     if (!response.ok) {
-      throw new Error("Network response was not ok");
+      throw new Error("API Error");
     }
 
     let data = await response.json();
 
-    // ✅ IMPORTANT FIX (new API structure)
     let rate = data[from][to];
 
     let finalAmount = amtVal * rate;
@@ -61,8 +60,8 @@ const updateExchangeRate = async () => {
       2
     )} ${toCurr.value}`;
   } catch (error) {
-    console.error("Error:", error);
-    msg.innerText = "❌ Failed to fetch exchange rate";
+    console.error(error);
+    msg.innerText = "❌ Error fetching exchange rate";
   }
 };
 
@@ -71,19 +70,17 @@ const updateFlag = (element) => {
   let currCode = element.value;
   let countryCode = countryList[currCode];
 
-  let newSrc = `https://flagsapi.com/${countryCode}/flat/64.png`;
-
   let img = element.parentElement.querySelector("img");
-  img.src = newSrc;
+  img.src = `https://flagsapi.com/${countryCode}/flat/64.png`;
 };
 
 // Button click
-btn.addEventListener("click", (evt) => {
-  evt.preventDefault();
+btn.addEventListener("click", (e) => {
+  e.preventDefault();
   updateExchangeRate();
 });
 
-// On page load
+// Load event
 window.addEventListener("load", () => {
   updateExchangeRate();
 });
